@@ -1,3 +1,4 @@
+---
 - name: configure mysql server
   hosts: mysql
   become: yes
@@ -9,7 +10,7 @@
       loop:
       - cryptography
       - PyMySQL
-    
+  
   - name: install mysql server
     ansible.builtin.package:
       name: mysql-server
@@ -26,7 +27,7 @@
       login_user: root
       login_password: ExpenseApp@1
       login_host: mysql.daws82.online
-      rigister: mysql_info # rigister shows output
+      register: mysql_info # rigister shows output
 
   - name: print the output
     ansible.builtin.debug:
