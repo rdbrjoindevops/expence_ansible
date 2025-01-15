@@ -2,26 +2,26 @@
   hosts: mysql
   become: yes
   tasks:
-    - name: install mysql server
-      ansible.builtin.package:
-        name: mysql-server
-        state: present 
+  - name: install mysql server
+    ansible.builtin.package:
+    name: mysql-server
+    state: present 
 
-    - name: start and enable mysql server
-      ansible.builtin.service:
-        name: mysqld
-        state: started
-        enabled: yes
+  - name: start and enable mysql server
+    ansible.builtin.service:
+    name: mysqld
+    state: started
+    enabled: yes
 
-    - name: connect to mysql server
-      community.mysql.mysql_info:
-        login_user: root
-        login_password: ExpenseApp@1
-        login_host: mysql.daws82.online
+  - name: connect to mysql server
+    community.mysql.mysql_info:
+      login_user: root
+      login_password: ExpenseApp@1
+      login_host: mysql.daws82.online
       rigister: mysql_info # rigister shows output
 
-    - name: print the output
-      ansible.builtin.debug:
-        msg: "mysql info : {{ mysql_info }}"    
+  - name: print the output
+    ansible.builtin.debug:
+      msg: "mysql info : {{ mysql_info }}"    
 
 
