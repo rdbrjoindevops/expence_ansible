@@ -13,3 +13,15 @@
         state: started
         enabled: yes
 
+    - name: connect to mysql server
+      community.mysql.mysql_info:
+        login_user: root
+        login_password: ExpenseApp@1
+        login_host: mysql.daws82.online
+      rigister: mysql_info # rigister shows output
+
+    - name: print the output
+      ansible.builtin.debug:
+        msg: "mysql info : {{ mysql_info }}"    
+
+
