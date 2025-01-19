@@ -51,7 +51,7 @@
       executable:pip3.9
     loop:
      - cryptography
-     - PyMySQl
+     - PyMySQL
 
 
   - name: import mysql data
