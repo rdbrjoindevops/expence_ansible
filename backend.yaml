@@ -63,12 +63,7 @@
       login_host : mysql.daws82.online
       target: /app/schema/backend.sql
 
-  - name: demon reload and start service
-    ansible.builtin.systemd-service:
-      enabled: true
-      state: restarted
-      demon_reload: true
-      name: backend
+  
          
 
    
